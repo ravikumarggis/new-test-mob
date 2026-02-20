@@ -37,7 +37,7 @@ export default function BlogPost() {
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-gray-50 via-white to-blue-50">
-      <section className="relative h-96 bg-gradient-to-r from-blue-600 to-purple-600">
+      <section className="relative h-96 bg-gradient-to-r from-[#8C6CFE] to-purple-600">
         <div className="absolute inset-0 bg-black opacity-30"></div>
         <img
           src={blogPost.image}
@@ -54,7 +54,7 @@ export default function BlogPost() {
               <span>Back to Blog</span>
             </Link>
             <div className="max-w-4xl">
-              <span className="bg-blue-600 text-white px-4 py-2 rounded-full text-sm font-medium">
+              <span className="bg-[#8C6CFE] text-white px-4 py-2 rounded-full text-sm font-medium">
                 {blogPost.category}
               </span>
               <h1 className="text-4xl md:text-5xl font-bold text-white mt-4 mb-6">
@@ -81,11 +81,11 @@ export default function BlogPost() {
           <div className="max-w-4xl mx-auto">
             <div className="bg-white rounded-2xl shadow-lg p-8 md:p-12 -mt-20 relative z-10">
               <div className="flex items-center justify-end space-x-4 mb-8 pb-8 border-b">
-                <button className="flex items-center space-x-2 text-gray-600 hover:text-blue-600 transition-colors">
+                <button className="flex items-center space-x-2 text-gray-600 hover:text-[#8C6CFE] transition-colors">
                   <Share2 className="w-5 h-5" />
                   <span>Share</span>
                 </button>
-                <button className="flex items-center space-x-2 text-gray-600 hover:text-blue-600 transition-colors">
+                <button className="flex items-center space-x-2 text-gray-600 hover:text-[#8C6CFE] transition-colors">
                   <BookmarkPlus className="w-5 h-5" />
                   <span>Save</span>
                 </button>

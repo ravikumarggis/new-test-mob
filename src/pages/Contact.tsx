@@ -29,7 +29,7 @@ export default function Contact() {
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-gray-50 via-blue-50 to-purple-50">
-      <section className="relative py-20 bg-gradient-to-r from-blue-600 to-purple-600 text-white">
+      <section className="relative py-20 bg-gradient-to-r from-blue-900 via-blue-700 to-blue-100 text-white">
         <div className="absolute inset-0 bg-black opacity-10"></div>
         <div className="container mx-auto px-4 relative z-10">
           <div className="max-w-3xl mx-auto text-center">
@@ -217,7 +217,7 @@ export default function Contact() {
         </div>
       </section>
 
-      <section className="py-20 bg-white">
+      {/* <section className="py-20 bg-white">
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto">
             <div className="bg-gradient-to-r from-blue-50 to-purple-50 rounded-2xl p-8 md:p-12 text-center">
@@ -233,7 +233,7 @@ export default function Contact() {
             </div>
           </div>
         </div>
-      </section>
+      </section> */}
     </div>
   );
 }

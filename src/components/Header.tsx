@@ -31,7 +31,7 @@ export default function Header() {
       <div className="container mx-auto px-4">
         <div className="flex items-center justify-between">
           <Link to="/" className="flex items-center space-x-2 group">
-            <Code2 className={`w-8 h-8 transition-colors ${isScrolled ? 'text-blue-600' : 'text-white'} group-hover:text-blue-500`} />
+            <Code2 className={`w-8 h-8 transition-colors ${isScrolled ? 'text-[#8C6CFE]' : 'text-white'} group-hover:text-blue-500`} />
             <span className={`text-2xl font-bold transition-colors ${isScrolled ? 'text-gray-900' : 'text-white'}`}>
               Mobrib
             </span>
@@ -45,10 +45,10 @@ export default function Header() {
                 className={`font-medium transition-all duration-300 hover:scale-105 ${
                   location.pathname === link.path
                     ? isScrolled
-                      ? 'text-blue-600'
+                      ? 'text-[#8C6CFE]'
                       : 'text-white border-b-2 border-white'
                     : isScrolled
-                    ? 'text-gray-700 hover:text-blue-600'
+                    ? 'text-gray-700 hover:text-[#8C6CFE]'
                     : 'text-white hover:text-blue-200'
                 }`}
               >
@@ -75,9 +75,9 @@ export default function Header() {
                   onClick={() => setIsMobileMenuOpen(false)}
                   className={`font-medium transition-colors ${
                     location.pathname === link.path
-                      ? 'text-blue-600'
+                      ? 'text-[#8C6CFE]'
                       : isScrolled
-                      ? 'text-gray-700 hover:text-blue-600'
+                      ? 'text-gray-700 hover:text-[#8C6CFE]'
                       : 'text-white hover:text-blue-200'
                   }`}
                 >

@@ -69,7 +69,7 @@ export default function Blog() {
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-gray-50 via-white to-blue-50">
-      <section className="relative py-20 bg-gradient-to-r from-green-600 to-teal-600 text-white">
+      <section className="relative py-20 bg-gradient-to-r from-blue-900 via-blue-700 to-blue-100 text-white">
         <div className="absolute inset-0 bg-black opacity-10"></div>
         <div className="container mx-auto px-4 relative z-10">
           <div className="max-w-3xl mx-auto text-center">
@@ -154,7 +154,7 @@ export default function Blog() {
         </div>
       </section>
 
-      <section className="py-20 bg-gradient-to-r from-green-600 to-teal-600 text-white">
+      {/* <section className="py-20 bg-gradient-to-r from-green-600 to-teal-600 text-white">
         <div className="container mx-auto px-4 text-center">
           <h2 className="text-4xl font-bold mb-6">Subscribe to Our Newsletter</h2>
           <p className="text-xl text-green-100 mb-8 max-w-2xl mx-auto">
@@ -171,7 +171,7 @@ export default function Blog() {
             </button>
           </div>
         </div>
-      </section>
+      </section> */}
     </div>
   );
 }

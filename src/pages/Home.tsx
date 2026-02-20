@@ -10,8 +10,27 @@ import {
   CheckCircle,
 } from "lucide-react";
 import { motion } from "framer-motion";
+import StatsSection from "../components/StatsSection";
 
 export default function Home() {
+
+  const containerVariants = {
+    hidden: {},
+    visible: {
+      transition: {
+        staggerChildren: 0.15,
+      },
+    },
+  };
+  
+  const itemVariants = {
+    hidden: { opacity: 0, y: 30 },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: { duration: 0.5, ease: "easeOut" },
+    },
+  };
   const fadeUp = {
     hidden: { opacity: 0, y: 60 },
     visible: {
@@ -41,8 +60,7 @@ export default function Home() {
     {
       icon: Smartphone,
       title: "Mobile App Development",
-      description:
-        "Native and cross-platform mobile apps for iOS and Android.",
+      description: "Native and cross-platform mobile apps for iOS and Android.",
       color: "bg-green-500",
     },
     {
@@ -55,15 +73,13 @@ export default function Home() {
     {
       icon: Search,
       title: "SEO Services",
-      description:
-        "Optimize your website for better search engine rankings.",
+      description: "Optimize your website for better search engine rankings.",
       color: "bg-orange-500",
     },
     {
       icon: Server,
       title: "Web Hosting",
-      description:
-        "99.9% uptime guarantee with 24/7 customer support.",
+      description: "99.9% uptime guarantee with 24/7 customer support.",
       color: "bg-teal-500",
     },
     {
@@ -91,17 +107,22 @@ export default function Home() {
   ];
 
   const process = [
-    { title: "Analysis", description: "Understanding your requirements and goals" },
+    {
+      title: "Analysis",
+      description: "Understanding your requirements and goals",
+    },
     { title: "Design", description: "Creating beautiful UI/UX designs" },
-    { title: "Development", description: "Building your solution with best practices" },
+    {
+      title: "Development",
+      description: "Building your solution with best practices",
+    },
     { title: "Testing", description: "Rigorous quality assurance" },
     { title: "Deployment", description: "Launching your product successfully" },
   ];
 
   return (
     <div className="overflow-hidden">
-
-<section className="relative min-h-screen flex items-center justify-center bg-gradient-to-br from-blue-900 via-blue-700 to-blue-500">
+      <section className="relative min-h-screen flex items-center justify-center bg-gradient-to-br from-blue-900 via-blue-700 to-blue-100">
         <div className="absolute inset-0 bg-black opacity-30"></div>
 
         <div className="container mx-auto px-4 relative z-10 text-center">
@@ -129,7 +150,8 @@ export default function Home() {
             transition={{ delay: 0.4, duration: 0.8 }}
             className="text-lg md:text-xl text-white mb-12 max-w-3xl mx-auto"
           >
-            Building innovative websites and mobile apps that drive business growth
+            Building innovative websites and mobile apps that drive business
+            growth
           </motion.p>
 
           <motion.div
@@ -191,54 +213,108 @@ export default function Home() {
         </div>
       </motion.section>
 
-      {/* ABOUT */}
       <motion.section
-        className="py-20 bg-gradient-to-br from-gray-50 to-blue-50"
+        className="py-24 bg-gray-100 overflow-hidden"
         variants={fadeUp}
         initial="hidden"
         whileInView="visible"
         viewport={{ once: true }}
       >
-        <div className="container mx-auto px-4 text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
-            About Mobrib
-          </h2>
-          <p className="text-xl text-gray-600 max-w-4xl mx-auto">
-            We are a leading web and mobile app development company committed
-            to delivering innovative, high-quality solutions.
-          </p>
+        <div className="container mx-auto px-4">
+          {/* Heading */}
+          <div className="text-center mb-20">
+            <h2 className="text-4xl md:text-5xl font-bold mb-4">
+              Development Process
+            </h2>
+          </div>
+
+          {/* Steps */}
+          <div className="flex flex-col md:flex-row items-center justify-between relative">
+            {[
+              { title: "Analysis", icon: "📊" },
+              { title: "UI/UX Design", icon: "🎨" },
+              { title: "Development", icon: "💻" },
+              { title: "Testing", icon: "🧪" },
+              { title: "Deployment", icon: "🚀" },
+            ].map((step, index) => (
+              <div key={index} className="relative flex flex-col items-center">
+                {/* Circle */}
+                <motion.div
+                  variants={fadeUp}
+                  className="w-44 h-44 rounded-full bg-white shadow-xl border-4 border-blue-500 flex flex-col items-center justify-center text-center p-6 transition-all duration-500 hover:scale-105"
+                >
+                  <div className="text-4xl mb-3">{step.icon}</div>
+                  <h3 className="text-lg font-semibold text-gray-800">
+                    {step.title}
+                  </h3>
+                </motion.div>
+
+                {/* Arrow (Desktop Only) */}
+                {index !== 4 && (
+                  <div className="hidden md:block absolute top-1/2 -right-16 transform -translate-y-1/2 text-4xl text-blue-400">
+                    ➜
+                  </div>
+                )}
+
+                {/* Arrow (Mobile Only) */}
+                {index !== 4 && (
+                  <div className="md:hidden text-3xl text-blue-400 my-6">↓</div>
+                )}
+              </div>
+            ))}
+          </div>
         </div>
       </motion.section>
+      <StatsSection />
 
       {/* TECHNOLOGIES */}
       <motion.section
-        className="py-20 bg-gray-900 text-white"
-        variants={fadeUp}
-        initial="hidden"
-        whileInView="visible"
-        viewport={{ once: true }}
-      >
-        <div className="container mx-auto px-4 text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-bold mb-4">
-            Technologies We Use
-          </h2>
-        </div>
+  className="py-24 bg-gradient-to-br from-[#FFFF] via-[#FFFF] to-[#FFFF] text-black"
+  initial="hidden"
+  whileInView="visible"
+  viewport={{ once: true }}
+>
+  <div className="container mx-auto px-4 text-center mb-16">
+    <h2 className="text-4xl md:text-5xl font-bold mb-6">
+      Introducing <span className="text-blue-500">Mobrib App</span>
+    </h2>
 
-        <div className="flex flex-wrap justify-center gap-4">
-          {technologies.map((tech, index) => (
-            <motion.div
-              key={index}
-              variants={fadeUp}
-              className="bg-gray-800 px-6 py-3 rounded-full text-lg font-medium hover:bg-blue-600 transition-colors duration-300 transform hover:scale-110"
-            >
-              {tech}
-            </motion.div>
-          ))}
-        </div>
-      </motion.section>
+    <p className=" text-lg max-w-3xl mx-auto">
+      A complete school management solution built to simplify operations,
+      enhance communication, and improve academic performance.
+    </p>
+  </div>
+
+  {/* Animated Feature List */}
+  <motion.div
+    variants={containerVariants}
+    className="flex flex-wrap justify-center gap-4 max-w-5xl mx-auto"
+  >
+    {[
+      "Student Management",
+      "Exam & Result System",
+      "Attendance Tracking",
+      "Real-Time Notifications",
+      "Parent Communication",
+      "Analytics Dashboard",
+      "Secure Cloud Storage",
+      "99.9% Uptime",
+      "Mobile & Web Access",
+    ].map((feature, index) => (
+      <motion.div
+        key={index}
+        variants={itemVariants}
+        whileHover={{ scale: 1.08 }}
+        className="bg-[#000]/10 backdrop-blur-md border border-white/20 px-6 py-3 rounded-full text-lg font-medium hover:bg-blue-500 hover:text-white transition-all duration-300"
+      >
+        {feature}
+      </motion.div>
+    ))}
+  </motion.div>
+</motion.section>
 
       {/* PROCESS */}
-      <motion.section
+      {/* <motion.section
         className="py-20 bg-white"
         variants={fadeUp}
         initial="hidden"
@@ -257,14 +333,12 @@ export default function Home() {
                   {index + 1}
                 </div>
                 <h3 className="text-xl font-bold mb-2">{step.title}</h3>
-                <p className="text-blue-100 text-sm">
-                  {step.description}
-                </p>
+                <p className="text-blue-100 text-sm">{step.description}</p>
               </motion.div>
             ))}
           </div>
         </div>
-      </motion.section>
+      </motion.section> */}
 
       {/* WHY CHOOSE US */}
       <motion.section
@@ -290,75 +364,14 @@ export default function Home() {
                 className="flex items-center space-x-4 bg-white p-6 rounded-xl shadow-md"
               >
                 <CheckCircle className="w-6 h-6 text-green-500 flex-shrink-0" />
-                <span className="text-gray-700 text-lg">
-                  {benefit}
-                </span>
+                <span className="text-gray-700 text-lg">{benefit}</span>
               </motion.div>
             ))}
           </div>
         </div>
       </motion.section>
       {/* DEVELOPMENT PROCESS */}
-<motion.section
-  className="py-24 bg-gray-100 overflow-hidden"
-  variants={fadeUp}
-  initial="hidden"
-  whileInView="visible"
-  viewport={{ once: true }}
->
-  <div className="container mx-auto px-4">
-    
-    {/* Heading */}
-    <div className="text-center mb-20">
-      <h2 className="text-4xl md:text-5xl font-bold mb-4">
-        Development Process
-      </h2>
-    
-    </div>
-
-    {/* Steps */}
-    <div className="flex flex-col md:flex-row items-center justify-between relative">
-
-      {[
-        { title: "Analysis", icon: "📊" },
-        { title: "UI/UX Design", icon: "🎨" },
-        { title: "Development", icon: "💻" },
-        { title: "Testing", icon: "🧪" },
-        { title: "Deployment", icon: "🚀" },
-      ].map((step, index) => (
-        <div key={index} className="relative flex flex-col items-center">
-
-          {/* Circle */}
-          <motion.div
-            variants={fadeUp}
-            className="w-44 h-44 rounded-full bg-white shadow-xl border-4 border-blue-500 flex flex-col items-center justify-center text-center p-6 transition-all duration-500 hover:scale-105"
-          >
-            <div className="text-4xl mb-3">{step.icon}</div>
-            <h3 className="text-lg font-semibold text-gray-800">
-              {step.title}
-            </h3>
-          </motion.div>
-
-          {/* Arrow (Desktop Only) */}
-          {index !== 4 && (
-            <div className="hidden md:block absolute top-1/2 -right-16 transform -translate-y-1/2 text-4xl text-blue-400">
-              ➜
-            </div>
-          )}
-
-          {/* Arrow (Mobile Only) */}
-          {index !== 4 && (
-            <div className="md:hidden text-3xl text-blue-400 my-6">
-              ↓
-            </div>
-          )}
-        </div>
-      ))}
-
-    </div>
-  </div>
-</motion.section>
-
+     
     </div>
   );
 }
