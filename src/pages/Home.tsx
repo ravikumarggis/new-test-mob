@@ -298,6 +298,66 @@ export default function Home() {
           </div>
         </div>
       </motion.section>
+      {/* DEVELOPMENT PROCESS */}
+<motion.section
+  className="py-24 bg-gray-100 overflow-hidden"
+  variants={fadeUp}
+  initial="hidden"
+  whileInView="visible"
+  viewport={{ once: true }}
+>
+  <div className="container mx-auto px-4">
+    
+    {/* Heading */}
+    <div className="text-center mb-20">
+      <h2 className="text-4xl md:text-5xl font-bold mb-4">
+        Development Process
+      </h2>
+    
+    </div>
+
+    {/* Steps */}
+    <div className="flex flex-col md:flex-row items-center justify-between relative">
+
+      {[
+        { title: "Analysis", icon: "📊" },
+        { title: "UI/UX Design", icon: "🎨" },
+        { title: "Development", icon: "💻" },
+        { title: "Testing", icon: "🧪" },
+        { title: "Deployment", icon: "🚀" },
+      ].map((step, index) => (
+        <div key={index} className="relative flex flex-col items-center">
+
+          {/* Circle */}
+          <motion.div
+            variants={fadeUp}
+            className="w-44 h-44 rounded-full bg-white shadow-xl border-4 border-blue-500 flex flex-col items-center justify-center text-center p-6 transition-all duration-500 hover:scale-105"
+          >
+            <div className="text-4xl mb-3">{step.icon}</div>
+            <h3 className="text-lg font-semibold text-gray-800">
+              {step.title}
+            </h3>
+          </motion.div>
+
+          {/* Arrow (Desktop Only) */}
+          {index !== 4 && (
+            <div className="hidden md:block absolute top-1/2 -right-16 transform -translate-y-1/2 text-4xl text-blue-400">
+              ➜
+            </div>
+          )}
+
+          {/* Arrow (Mobile Only) */}
+          {index !== 4 && (
+            <div className="md:hidden text-3xl text-blue-400 my-6">
+              ↓
+            </div>
+          )}
+        </div>
+      ))}
+
+    </div>
+  </div>
+</motion.section>
 
     </div>
   );
